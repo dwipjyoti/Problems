@@ -1,0 +1,20 @@
+/* Question :- Given two strings s1="sghsdgfABBAdfkjgdhgdk" and s2="ABBA" . Write a program to check if s2 is present in s1 */
+/* STRING MATCHING */
+
+public class Check{
+    public static void patternCheck(String s1,String s2){
+        int M=s1.length();
+        int N=s2.length();
+        
+        for(int i=0;i<(M-N);i++){//keeps track on string s1.....but upto (M-N) becoz we cant check after M.....it will give exception
+            int j;
+            for(j=0;j<N;j++){//keeps trck on string s2
+                if((s1.charAt(i+j)!=s2.charAt(j)){
+                    break;
+                }//otherwise loop will continue because pattern is matching
+            }
+        
+        }   
+    }
+
+}
