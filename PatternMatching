@@ -5,9 +5,8 @@ public class Check{
     public boolean patternCheck(String s1,String s2){
         int M=s1.length();
         int N=s2.length();
-        
         int b=false;//we assume no match
-        
+     
         for(int i=0;i<(M-N);i++){//keeps track on string s1.....but upto (M-N) becoz we cant check after M.....it will give exception
             int j;
             for(j=0;j<N;j++){//keeps trck on string s2
