@@ -1,0 +1,38 @@
+/* Question :- Given two strings s1=dwipjyoti and s2=jyotisdnndwip
+ * you are to check is s2 is in s1
+ * s2 will contain s1 in two halves one half at first and one half at last separated at some place
+ * Note :- one half at first and one half at last
+ */
+ 
+ //before going to this problem frist check string matching problem
+ 
+ public class Check{
+      public boolean patternMatch(String s1,String s2){
+            //As it is said that one half is at first and one at last so just add s2 twice we will get it
+            String s3=s2+s2;//s2=jyotisdnndwip  .....   s3=jyotisdnndwip+jyotisdnndwip=jyotisdnndwipjyotisdnndwip
+                            //now check is s1 in s3 you will get you result
+            boolean b=false;
+            for(int i=0;i<s3.length()-s1.length();i++){
+                int j;
+                for(int j=0;j<s1.length();j++){
+                      if((s3.charAt(i+j)!=s1.charAt(j)){
+                          break;//that is pattern not match with starting i
+                      }
+                }
+                if(j==s1.length()){
+                    b=true;
+                }
+                
+            
+            
+            }
+      
+            return b;     
+      
+      
+      }
+ 
+ 
+ 
+ 
+ }
