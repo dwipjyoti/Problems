@@ -1,0 +1,46 @@
+/* Questions :- you are given a sorted array . but array sorted at some pivot. 
+ * arr=[6,7,8,9,1,2,3,4,5]
+ * value=8
+ * search index of value in  the array
+ * use Binary Search for time efficiency
+ */
+ 
+ public class Sort{
+      public int search(int[] arr,int value){
+            //first find the minimum element index in the array
+            int min=Integer.MAX_VALUE;
+            int index=0;
+            for(int i=0;i<arr.length;i++){
+                if(arr[i]<min){
+                    min=arr[i];
+                    index=i;//this in the index where the array is sorted
+                }
+            }
+            if(value>=arr[index] && value<=arr[arr.length-1]){
+                  int got=BS(arr,index,arr.length-1,value);//from minimum index to arrar's last index becoz before minimum index all elements are greater    
+            }
+            else{
+                  int got=BS(arr,0,index-1,value);//from 0 to minimum index-1.....within this all elements are greater than above array
+            }
+           
+            
+      }
+      //apply binary search to get the element
+      public int BinarySearch(int[] arr,int start,int end,int value){
+            while(start<=end){
+                int mid=start+((end-start)/2);
+                
+                if(arr[mid]==value){
+                    return mid;
+                }
+                else if(arr[mid]<value){
+                    end=mid-1;
+                }
+                else{
+                    start=mid+1;
+                }
+            }
+            return -1;
+      }
+ 
+ }
