@@ -1,4 +1,4 @@
-/* Question:- Count every word in a String */
+/* Question:- Count every word in a String and Return the count of each word as a list*/
 
 public List<Integer> count(String s){
       List<Integer> list=new ArrayList<>();
