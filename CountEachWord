@@ -13,6 +13,5 @@ public List<Integer> count(String s){
           }
       }
       list.add(count);
-
       return list;
 }
