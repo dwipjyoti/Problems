@@ -1,0 +1,33 @@
+/* Count Prime Numbers Whith In Range */
+
+
+/* This will take O(n^2)
+ * We take a loop for given n numbers from 2 to n
+ * Now considering from this loop a number as individual and we divide this number from 2 to (currentNumber-1)
+ * If this currentNumber gets divided by and number between 2 to (currentNumber-1) then it is not prime
+ * otherwsie we increment prime number
+ * So we use two loops which will take O(n^2)
+ */
+public int primeNumber(int n){
+    int prime=0;
+    for(int i=2;i<=n;i++){
+        int count=0;
+        for(int j=2;j<i;j++){
+            if(i%j==0){
+                count=1;
+                break;
+            }        
+        }
+        if(count==0){
+            prime++;
+        }   
+    }
+    return prime;
+}
+
+
+/* To make our code more efficient we go with Theory of "Sieve of Eratosthenes" */
+
+/* "Sieve of Eratosthenes"
+ * Here we create a boolean list/array of consecutive integers from 0 to n and mark all cells as True
+ * 
